@@ -55,13 +55,13 @@ public class FilePreprocessor {
                         break;
                     case "//":
                         resLine.append(line, beginIndex, endIndex-beginIndex);
-                        beginIndex = rawFileBuf.length-1;
+                        beginIndex = line.length-1;
                         break search;
                     default:
                         endIndex++;
                 }
             }
-            if (!blockCommentFlag && beginIndex < rawFileBuf.length) {
+            if (!blockCommentFlag && beginIndex < line.length) {
                 resLine.append(line, beginIndex, line.length-beginIndex);
             }
 

@@ -37,8 +37,8 @@ public class RuntimeJudge {
                     try {
                         Method mainMethod = srcClass.getMethod("main", String[].class);
 
-                        for (; tCase < problem.getTestCases() && jStatus == JudgeStatus.AC; tCase++) {
-                            String caseFile = String.format("data/%s_%d", problem, tCase + 1);
+                        for (tCase = 0; tCase < problem.getTestCases() && jStatus == JudgeStatus.AC; tCase++) {
+                            String caseFile = String.format("data/%s_%d", problem.getName(), tCase + 1);
                             jStatus = SingleJudge.judge(mainMethod, caseFile,
                                     problem.getTimeLimit(), problem.getChecker());
                         }
@@ -58,7 +58,7 @@ public class RuntimeJudge {
                     }
                 case WA:
                 case TLE:
-                    judgesResult += String.format(" at case %d", tCase + 1);
+                    judgesResult += String.format(" at case %d", tCase--);
                 default:
             }
 

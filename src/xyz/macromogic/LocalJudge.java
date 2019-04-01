@@ -19,6 +19,7 @@ public class LocalJudge {
         int problemsCnt = fProbListIn.nextInt();
         Problem[] probList = new Problem[problemsCnt];
         for (int iProb = 0; iProb < problemsCnt; iProb++) {
+            probList[iProb] = new Problem();
             probList[iProb].setName(fProbListIn.next());
             probList[iProb].setMaxScore(fProbListIn.nextInt());
             probList[iProb].setTestCases(fProbListIn.nextInt());
@@ -28,7 +29,6 @@ public class LocalJudge {
         // Note: Use `setChecker()` if necessary
 
         // Judge code for rack one in the list
-        // **TESTING** hasNext() for `InputReader`
         while (fNameListIn.hasNext()) {
             String id = fNameListIn.next();
             String path = "bin/" + id;
@@ -36,11 +36,16 @@ public class LocalJudge {
             fScoreOut.printf("%s, %d\n", id, score);
         }
 
+        STDERR.println("Judge finished.");
+
         // Close all files
         fNameList.close();
         fProbList.close();
         System.err.close();
         fScoreOut.close();
+
+        // A non-elegant way to finish
+        System.exit(0);
     }
 
     // Default IO Stream backup
