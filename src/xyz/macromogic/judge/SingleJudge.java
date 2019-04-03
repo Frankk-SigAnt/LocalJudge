@@ -18,15 +18,17 @@ class SingleJudge {
         FileInputStream testIn = null;
         try {
             testIn = new FileInputStream(caseFile + ".in");
-        } catch (FileNotFoundException ignore) { }
+        } catch (FileNotFoundException ignore) {
+        }
 
         // `args`
-        String[] args = new String[] {};
+        String[] args = new String[]{};
         try {
             Scanner fArgIn = new Scanner(new File(caseFile + ".arg"));
             args = fArgIn.useDelimiter("\\Z").next().split("\\s+");
             fArgIn.close();
-        } catch (FileNotFoundException ignore) { }
+        } catch (FileNotFoundException ignore) {
+        }
 
         // `stdout`
         ByteArrayOutputStream outputBuf = new ByteArrayOutputStream();
@@ -63,7 +65,12 @@ class SingleJudge {
         try {
             if (!countDownLatch.await(timeLimit, TimeUnit.MILLISECONDS)) {
                 status = JudgeStatus.TLE;
-            }else {
+                judgeThread.stop();
+                synchronized (Thread.currentThread()){
+                    Thread.sleep(100);
+                }
+            }
+            else {
                 if (RuntimeStatus.isRuntimeError()) {
                     status = JudgeStatus.RE;
                 }
@@ -73,7 +80,8 @@ class SingleJudge {
             e.printStackTrace();
             status = JudgeStatus.RE;
         } finally {
-            judgeThread.interrupt();
+            //judgeThread.stop();
+
         }
 
         // Judge the result
