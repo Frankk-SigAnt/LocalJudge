@@ -21,14 +21,17 @@ public class LocalJudge {
         for (int iProb = 0; iProb < problemsCnt; iProb++) {
             probList[iProb] = new Problem();
             probList[iProb].setName(fProbListIn.next());
-            probList[iProb].setMaxScore(fProbListIn.nextInt());
             probList[iProb].setTestCases(fProbListIn.nextInt());
+            probList[iProb].setMaxScore(fProbListIn.nextInt());
             probList[iProb].setTimeLimit(fProbListIn.nextLong());
         }
 
-        // Note: Use `setChecker()` if necessary
+        // Note: Set initial score and/or checker via `setChecker()` if necessary
+        // --------------
+        INIT_SCORE = 53;
+        // --------------
 
-        // Judge code for rack one in the list
+        // Judge code for each one in the list
         while (fNameListIn.hasNext()) {
             String id = fNameListIn.next();
             String path = "bin/" + id;
@@ -36,7 +39,7 @@ public class LocalJudge {
             fScoreOut.printf("%s, %d\n", id, score);
         }
 
-        STDERR.println("Judge finished.");
+        STDERR.println("----------\nJudge finished.");
 
         // Close all files
         fNameList.close();
@@ -58,5 +61,6 @@ public class LocalJudge {
     public static InputStream STDIN;
     public static PrintStream STDOUT;
     public static PrintStream STDERR;
+    public static int INIT_SCORE = 0;
 }
 

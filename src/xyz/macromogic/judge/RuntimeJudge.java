@@ -1,5 +1,6 @@
 package xyz.macromogic.judge;
 
+import xyz.macromogic.LocalJudge;
 import xyz.macromogic.Problem;
 import xyz.macromogic.file.FileCompiler;
 import xyz.macromogic.file.FilePreprocessor;
@@ -11,12 +12,14 @@ public class RuntimeJudge {
     public static int judge(String path, Problem[] probList) {
         System.err.println("----------");
         System.err.println("Judging " + path);
+        LocalJudge.STDERR.println("----------");
+        LocalJudge.STDERR.println("Judging " + path);
 
-        int totScore = 0;
+        int totScore = LocalJudge.INIT_SCORE;
         for (Problem problem : probList) {
             int tCase = 0;
+            int testCases = problem.getTestCases();
             JudgeStatus jStatus;
-
             System.err.println("> In Problem " + problem.getName() + ": ");
 
             FileStatus fStatus = FilePreprocessor.process(path, problem.getName());
@@ -37,10 +40,9 @@ public class RuntimeJudge {
                     try {
                         Method mainMethod = srcClass.getMethod("main", String[].class);
 
-                        for (tCase = 0; tCase < problem.getTestCases() && jStatus == JudgeStatus.AC; tCase++) {
+                        for (tCase = 0; tCase < testCases && jStatus == JudgeStatus.AC; tCase++) {
                             String caseFile = String.format("data/%s_%d", problem.getName(), tCase + 1);
-                            jStatus = SingleJudge.judge(mainMethod, caseFile,
-                                    problem.getTimeLimit(), problem.getChecker());
+                            jStatus = SingleJudge.judge(mainMethod, caseFile, problem.getTimeLimit(), problem.getChecker());
                         }
                     } catch (NoSuchMethodException e) {
                         e.printStackTrace();
@@ -63,7 +65,7 @@ public class RuntimeJudge {
             }
 
             int maxScore = problem.getMaxScore();
-            int score = maxScore * (tCase) / problem.getTestCases();
+            int score = maxScore * (tCase) / testCases;
             if (fStatus.packageBit()) {
                 judgesResult += "\nPackage detected";
             }
@@ -74,6 +76,8 @@ public class RuntimeJudge {
             judgesResult += String.format("\nScore: %d/%d", score, maxScore);
 
             System.err.println(judgesResult);
+            LocalJudge.STDERR.printf("%s:\t%s\n", problem.getName(), jStatus.getMessage());
+
             totScore += score;
         }
 

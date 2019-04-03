@@ -1,7 +1,9 @@
 package xyz.macromogic.file;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class FilePreprocessor {
@@ -15,17 +17,25 @@ public class FilePreprocessor {
         Scanner fileIn;
         PrintWriter fileOut;
         try {
-            fileIn = new Scanner(fStatus.getFile());
+            fileIn = new Scanner(fStatus.getFile(), StandardCharsets.UTF_8);
             fileOut = new PrintWriter("exec/" + problemNo + ".java");
         }
-        catch (FileNotFoundException e) {
+        catch (IOException e) {
             fStatus.setErrorBit();
             return fStatus;
         }
 
+        StringBuffer inputBuf = new StringBuffer();
+        while (fileIn.hasNext()) {
+            inputBuf.append(fileIn.nextLine()).append("\n");
+        }
+        String[] rawFileBuf = inputBuf.toString().split("\n");
+
+        /* FIXED: May cause NoSuchElementException
         String[] rawFileBuf = fileIn.useDelimiter("\\Z")
                 .next()
                 .split("\n");
+        //*/
 
         // Filter comments & identify package, Scanner and argument
         boolean blockCommentFlag = false;

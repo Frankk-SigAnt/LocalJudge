@@ -45,8 +45,10 @@ class SingleJudge {
             try {
                 mainMethod.invoke(null, (Object) finalArgs);
                 execSuccess = true;
-            } catch (IllegalAccessException | InvocationTargetException e) {
+            } catch (IllegalAccessException e) {
                 e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                System.err.println(e.getCause());
             }
 
             if (!execSuccess) {
@@ -61,22 +63,28 @@ class SingleJudge {
         try {
             if (!countDownLatch.await(timeLimit, TimeUnit.MILLISECONDS)) {
                 status = JudgeStatus.TLE;
-            }
-            else {
+            }else {
                 if (RuntimeStatus.isRuntimeError()) {
                     status = JudgeStatus.RE;
                 }
             }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
             status = JudgeStatus.RE;
+        } finally {
+            judgeThread.interrupt();
         }
 
         // Judge the result
         if (status == JudgeStatus.AC) {
             try {
                 Scanner fStdAnsIn = new Scanner(new File(caseFile + ".ans"));
-                if (!checker.check(outputBuf.toString(), fStdAnsIn.useDelimiter("\\Z").next())) {
+                String ans = outputBuf.toString();
+                String std = fStdAnsIn.useDelimiter("\\Z").next();
+                if (!checker.check(ans, std)) {
+                    System.err.println("Expected: \n" + std);
+                    System.err.println("Got: \n" + ans);
                     status = JudgeStatus.WA;
                 }
                 fStdAnsIn.close();
