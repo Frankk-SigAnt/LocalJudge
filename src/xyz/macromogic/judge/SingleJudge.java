@@ -94,7 +94,7 @@ class SingleJudge {
                 Scanner fStdAnsIn = new Scanner(new File(caseFile + ".ans"));
                 String ans = outputBuf.toString();
                 String std = FileScanner.read(fStdAnsIn);
-                if (!checker.check(ans, std)) {
+                if (checker.check(ans, std) != 0) {
                     String diffResult = String.format("Expected:\n%s\nGot:\n%s", std, ans);
                     if (promptFlag) {
                         status = prompt(diffResult);
