@@ -1,22 +1,28 @@
 package xyz.macromogic.judge;
 
 public enum JudgeStatus {
-    FNF("File not found"),
-    CE("Compilation error"),
-    AC("Accepted"),
-    WA("Wrong answer"),
-    PE("Presentation error"),
-    RE("Runtime error"),
-    TLE("Time limit exceeded"),
-    UE("Unexpected error");
+    AC("Accepted", 0),
+    PE("Presentation error", 1),
+    WA("Wrong answer", 2),
+    TLE("Time limit exceeded", 3),
+    RE("Runtime error", 4),
+    CE("Compilation error", 5),
+    FNF("File not found", 6),
+    UE("Unexpected error", 7);
 
     private String message;
+    int priority;
 
-    JudgeStatus(String message) {
+    JudgeStatus(String message, int priority) {
         this.message = message;
+        this.priority = priority;
     }
 
     public String getMessage() {
         return message;
+    }
+
+    public int getPriority() {
+        return priority;
     }
 }

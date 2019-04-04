@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class DefaultAnswerChecker implements AnswerChecker {
     @Override
-    public boolean check(String ans, String std) {
+    public int check(String ans, String std) {
         String[] ansArray = filterEmpty(ans.split("\\s+"));
         String[] stdArray = filterEmpty(std.split("\\s+"));
 
-        return Arrays.equals(ansArray, stdArray);
+        return Arrays.equals(ansArray, stdArray) ? 0 : 1;
     }
 
     private String[] filterEmpty(String[] raw) {

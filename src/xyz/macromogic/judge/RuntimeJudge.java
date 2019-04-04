@@ -46,7 +46,7 @@ public class RuntimeJudge {
                             JudgeStatus currectStatus = SingleJudge.judge(mainMethod, caseFile,
                                     problem.getTimeLimit(), problem.getChecker(), promptFlag);
 
-                            if (jStatus == JudgeStatus.AC || jStatus == JudgeStatus.PE || jStatus == JudgeStatus.WA) {
+                            if (jStatus.getPriority() < currectStatus.getPriority()) {
                                 jStatus = currectStatus;
                             }
 
