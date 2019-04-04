@@ -1,7 +1,7 @@
 package xyz.macromogic;
 
-import xyz.macromogic.judge.AnswerChecker;
-import xyz.macromogic.judge.DefaultAnswerChecker;
+import xyz.macromogic.check.AnswerChecker;
+import xyz.macromogic.check.DefaultAnswerChecker;
 
 public class Problem {
     public Problem() {

@@ -1,6 +1,7 @@
 package xyz.macromogic;
 
 import xyz.macromogic.judge.RuntimeJudge;
+import xyz.macromogic.check.*;
 
 import java.io.*;
 import java.util.Scanner;
@@ -26,18 +27,24 @@ public class LocalJudge {
             probList[iProb].setTimeLimit(fProbListIn.nextLong());
         }
 
+
+
         // Note: Set initial score and/or checker via `setChecker()` if necessary
         // --------------
         INIT_SCORE = 53;
         // --------------
 
+
         // Judge code for each one in the list
+        boolean promptFlag = true;
         while (fNameListIn.hasNext()) {
             String id = fNameListIn.next();
             String path = "bin/" + id;
-            int score = RuntimeJudge.judge(path, probList);
+            int score = RuntimeJudge.judge(path, probList, promptFlag);
             fScoreOut.printf("%s, %d\n", id, score);
         }
+
+
 
         // Close all files
         fNameList.close();

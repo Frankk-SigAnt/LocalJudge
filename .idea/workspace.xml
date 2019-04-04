@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b816eee-c039-4ffc-93d7-6d122e309b7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/xyz/macromogic/file/FileScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/LocalJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/LocalJudge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/Problem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/judge/AnswerChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/check/AnswerChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/judge/DefaultAnswerChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/check/DefaultAnswerChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java" afterDir="false" />
     </list>
     <list id="6da13113-c3bb-400f-9617-fa95f48b4576" name="Update README.md" comment="update readme.md&#10;&#10;(cherredddgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg">
       <changelist_data name="Tony H" email="cymatics_fsa@163.com" date="1553695978000" />
@@ -51,7 +57,7 @@
           <entry key="arg" value="1" />
           <entry key="class" value="2" />
           <entry key="csv" value="1" />
-          <entry key="java" value="92" />
+          <entry key="java" value="99" />
           <entry key="log" value="3" />
           <entry key="txt" value="5" />
           <entry key="xml" value="2" />
@@ -60,7 +66,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="92" />
+          <entry key="JAVA" value="99" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="XML" value="2" />
         </counts>
@@ -68,7 +74,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ans" value="2" />
-          <entry key="java" value="27567" />
+          <entry key="java" value="32729" />
           <entry key="log" value="753" />
           <entry key="regexp" value="4" />
           <entry key="txt" value="372" />
@@ -77,7 +83,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="27567" />
+          <entry key="JAVA" value="32729" />
           <entry key="PLAIN_TEXT" value="1127" />
           <entry key="RegExp" value="4" />
           <entry key="XML" value="63" />
@@ -95,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/runtime.log">
           <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="69720">
-              <caret line="4648" selection-start-line="4648" selection-end-line="4648" />
+            <state relative-caret-position="360">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -106,23 +112,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="310">
+              <caret line="48" column="114" selection-start-line="48" selection-start-column="114" selection-end-line="48" selection-end-column="114" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +127,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+            <state relative-caret-position="160">
+              <caret line="121" column="50" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/check/DefaultAnswerChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/Problem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#778#779#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,11 +175,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/LocalJudge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="238">
+              <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -171,11 +199,13 @@
     <findStrings>
       <find>Please input the right format of score and credit hour in pai</find>
       <find>STDOUT</find>
+      <find>useD</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Documents\Programming\CS102A_SA\LocalJudge</dir>
       <dir>D:\Documents\Programming\CS102A_SA\LocalJudge\bin\11811813</dir>
       <dir>D:\Documents\Programming\CS102A_SA\LocalJudge\src</dir>
+      <dir>D:\Documents\Programming\CS102A_SA\LocalJudge\src\xyz\macromogic</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -220,12 +250,15 @@
         <option value="$PROJECT_DIR$/src/xyz/macromogic/Problem.java" />
         <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/DefaultAnswerChecker.java" />
         <option value="$PROJECT_DIR$/bin/11813019/A2Q4.java" />
-        <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java" />
         <option value="$PROJECT_DIR$/data/A2Q2_2.ans" />
-        <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java" />
-        <option value="$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java" />
         <option value="$PROJECT_DIR$/config/nameList.txt" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/file/FileScanner.java" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java" />
         <option value="$PROJECT_DIR$/src/xyz/macromogic/LocalJudge.java" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/check/DefaultAnswerChecker.java" />
+        <option value="$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java" />
       </list>
     </option>
   </component>
@@ -265,22 +298,6 @@
             <path>
               <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
               <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="11812221" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,20 +305,6 @@
               <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="macromogic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="macromogic" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LocalJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LocalJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="macromogic" type="462c0819:PsiDirectoryNode" />
-              <item name="judge" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,11 +316,16 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554347539352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554404675078" />
     <property name="last.edited.regexp" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="xyz.macromogic.check" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -388,7 +396,7 @@
       <workItem from="1553580460315" duration="41648000" />
       <workItem from="1554133052919" duration="13278000" />
       <workItem from="1554278703372" duration="6089000" />
-      <workItem from="1554298996478" duration="16653000" />
+      <workItem from="1554298996478" duration="23770000" />
     </task>
     <task id="LOCAL-00001" summary="Initial version for LocalJudge. Not tested.">
       <created>1553695564388</created>
@@ -422,7 +430,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104121000" />
+    <option name="totallyTimeSpent" value="111238000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -437,7 +445,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18381241" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18381241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -446,7 +454,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2857143" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2857143" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3678161" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -547,12 +555,6 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.OutOfMemoryError" package="java.lang" />
           <option name="timeStamp" value="7" />
@@ -582,16 +584,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/score.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../bin/11812203/A1Q1.java" />
     <entry file="file://$PROJECT_DIR$/../Assignment2/唐吉雨, TANG Jiyu(11813101)/Submission attachment(s)/A2Q3_1.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -608,13 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="935" column="49" selection-start-line="935" selection-start-column="49" selection-end-line="935" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/DefaultAnswerChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -674,16 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/file/FileCompiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,31 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#146#147#0" expanded="true" />
-            <element signature="e#186#187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/probList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -856,45 +806,38 @@
     <entry file="file://$PROJECT_DIR$/bin/11812221/A2Q1.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java">
+    <entry file="file://$PROJECT_DIR$/config/nameList.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+        <state relative-caret-position="195">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/nameList.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/runtime.log">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="69720">
-          <caret line="4648" selection-start-line="4648" selection-end-line="4648" />
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/file/FileCompiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-225434">
-          <caret line="3730" selection-start-line="3730" selection-end-line="3730" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/file/FileScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/file/FilePreprocessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state>
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -903,8 +846,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/LocalJudge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="238">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/JudgeStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/check/DefaultAnswerChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/SingleJudge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="121" column="50" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/runtime.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="360">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-225434">
+          <caret line="3730" selection-start-line="3730" selection-end-line="3730" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/macromogic/judge/RuntimeJudge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="48" column="114" selection-start-line="48" selection-start-column="114" selection-end-line="48" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

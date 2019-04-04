@@ -5,7 +5,7 @@ public enum JudgeStatus {
     CE("Compilation error"),
     AC("Accepted"),
     WA("Wrong answer"),
-    // PE("Presentation error"),
+    PE("Presentation error"),
     RE("Runtime error"),
     TLE("Time limit exceeded"),
     UE("Unexpected error");

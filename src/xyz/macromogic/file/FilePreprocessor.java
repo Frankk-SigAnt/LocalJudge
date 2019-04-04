@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class FilePreprocessor {
     public static FileStatus process(String path, String problemNo) {
         FileStatus fStatus = new FileStatus(path + "/" + problemNo + ".java");
-
         if (fStatus.fileMissingBit()) {
             return fStatus;
         }
@@ -24,19 +23,18 @@ public class FilePreprocessor {
             return fStatus;
         }
 
-        StringBuffer inputBuf = new StringBuffer();
-        while (fileIn.hasNext()) {
-            inputBuf.append(fileIn.nextLine()).append("\n");
-        }
-        String[] rawFileBuf = inputBuf.toString().split("\n");
+        filter(FileScanner.read(fileIn).split("\n"), fStatus, fileOut);
 
-        /* FIXED: May cause NoSuchElementException
-        String[] rawFileBuf = fileIn.useDelimiter("\\Z")
-                .next()
-                .split("\n");
-        //*/
+        // Update file
+        fStatus.setFile("exec/" + problemNo + ".java");
 
-        // Filter comments & identify package, Scanner and argument
+        fileIn.close();
+        fileOut.close();
+        return fStatus;
+    }
+
+    // Filter comments & identify package, Scanner and argument parsing
+    private static void filter(String[] rawFileBuf, FileStatus fStatus, PrintWriter destFileOut) {
         boolean blockCommentFlag = false;
         StringBuffer resLine = new StringBuffer();
         for (String fLine : rawFileBuf) {
@@ -86,14 +84,7 @@ public class FilePreprocessor {
                 fStatus.setArgsBit();
             }
 
-            fileOut.print(resLine);
+            destFileOut.print(resLine);
         }
-
-        // Update file
-        fStatus.setFile("exec/" + problemNo + ".java");
-
-        fileIn.close();
-        fileOut.close();
-        return fStatus;
     }
 }

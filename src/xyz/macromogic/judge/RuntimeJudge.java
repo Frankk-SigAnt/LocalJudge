@@ -9,7 +9,7 @@ import xyz.macromogic.file.FileStatus;
 import java.lang.reflect.Method;
 
 public class RuntimeJudge {
-    public static int judge(String path, Problem[] probList) {
+    public static int judge(String path, Problem[] probList, boolean promptFlag) {
         System.err.println("----------");
         System.err.println("Judging " + path);
         LocalJudge.STDERR.println("----------");
@@ -17,6 +17,7 @@ public class RuntimeJudge {
 
         int totScore = LocalJudge.INIT_SCORE;
         for (Problem problem : probList) {
+            int acceptedCnt = 0;
             int tCase = 0;
             int testCases = problem.getTestCases();
             JudgeStatus jStatus;
@@ -40,9 +41,18 @@ public class RuntimeJudge {
                     try {
                         Method mainMethod = srcClass.getMethod("main", String[].class);
 
-                        for (tCase = 0; tCase < testCases && jStatus == JudgeStatus.AC; tCase++) {
+                        for (tCase = 0; tCase < testCases && (promptFlag || jStatus == JudgeStatus.AC); tCase++) {
                             String caseFile = String.format("data/%s_%d", problem.getName(), tCase + 1);
-                            jStatus = SingleJudge.judge(mainMethod, caseFile, problem.getTimeLimit(), problem.getChecker());
+                            JudgeStatus currectStatus = SingleJudge.judge(mainMethod, caseFile,
+                                    problem.getTimeLimit(), problem.getChecker(), promptFlag);
+
+                            if (jStatus == JudgeStatus.AC || jStatus == JudgeStatus.PE || jStatus == JudgeStatus.WA) {
+                                jStatus = currectStatus;
+                            }
+
+                            if (jStatus == JudgeStatus.AC) {
+                                acceptedCnt++;
+                            }
                         }
                     } catch (NoSuchMethodException e) {
                         e.printStackTrace();
@@ -52,6 +62,7 @@ public class RuntimeJudge {
                 }
             }
 
+
             String judgesResult = jStatus.getMessage();
             switch (jStatus) {
                 case RE:
@@ -59,13 +70,17 @@ public class RuntimeJudge {
                         break;
                     }
                 case WA:
+                case PE:
                 case TLE:
-                    judgesResult += String.format(" at case %d", tCase--);
+                    if (!promptFlag) {
+                        judgesResult += String.format(" at case %d", tCase--);
+                    }
                 default:
             }
-
             int maxScore = problem.getMaxScore();
-            int score = maxScore * (tCase) / testCases;
+            int score = maxScore * acceptedCnt / testCases;
+
+
             if (fStatus.packageBit()) {
                 judgesResult += "\n*** Package detected ***";
             }
@@ -79,6 +94,10 @@ public class RuntimeJudge {
             LocalJudge.STDERR.printf("%s:\t%s\n", problem.getName(), jStatus.getMessage());
 
             totScore += score;
+        }
+
+        if (totScore == LocalJudge.INIT_SCORE) {
+            totScore = 0;
         }
 
         System.err.printf("Total score: %d\n", totScore);
