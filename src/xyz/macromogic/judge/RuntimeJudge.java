@@ -43,14 +43,14 @@ public class RuntimeJudge {
 
                         for (tCase = 0; tCase < testCases && (promptFlag || jStatus == JudgeStatus.AC); tCase++) {
                             String caseFile = String.format("data/%s_%d", problem.getName(), tCase + 1);
-                            JudgeStatus currectStatus = SingleJudge.judge(mainMethod, caseFile,
+                            JudgeStatus currentStatus = SingleJudge.judge(mainMethod, caseFile,
                                     problem.getTimeLimit(), problem.getChecker(), promptFlag);
 
-                            if (jStatus.getPriority() < currectStatus.getPriority()) {
-                                jStatus = currectStatus;
+                            if (jStatus.getPriority() < currentStatus.getPriority()) {
+                                jStatus = currentStatus;
                             }
 
-                            if (jStatus == JudgeStatus.AC) {
+                            if (currentStatus == JudgeStatus.AC) {
                                 acceptedCnt++;
                             }
                         }
