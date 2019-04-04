@@ -1,6 +1,5 @@
 package xyz.macromogic.file;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -76,14 +75,14 @@ public class FilePreprocessor {
             }
 
             String strLine = resLine.toString();
-            if (strLine.contains("package")) {
+            if (strLine.matches("\\s*package[\\s\\S]*")) {
                 fStatus.setPackageBit();
                 resLine.delete(0, resLine.length());
             }
-            if (strLine.matches("Scanner\\s*\\(\\s*System.in\\s*\\)")) {
+            if (strLine.matches(".*Scanner\\s*\\(\\s*System.in\\s*\\)[\\s\\S]*")) {
                 fStatus.setScannerBit();
             }
-            if (strLine.matches("args\\s*\\[\\s*\\d+\\s*]")) {
+            if (strLine.matches(".*args\\s*\\[\\s*\\w+\\s*][\\s\\S]*")) {
                 fStatus.setArgsBit();
             }
 

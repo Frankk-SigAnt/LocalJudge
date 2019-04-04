@@ -67,10 +67,10 @@ public class RuntimeJudge {
             int maxScore = problem.getMaxScore();
             int score = maxScore * (tCase) / testCases;
             if (fStatus.packageBit()) {
-                judgesResult += "\nPackage detected";
+                judgesResult += "\n*** Package detected ***";
             }
             if (fStatus.argsBit()) {
-                judgesResult += "\nArgument parsing detected";
+                judgesResult += "\n*** Argument parsing detected ***";
             }
 
             judgesResult += String.format("\nScore: %d/%d", score, maxScore);

@@ -39,8 +39,6 @@ public class LocalJudge {
             fScoreOut.printf("%s, %d\n", id, score);
         }
 
-        STDERR.println("----------\nJudge finished.");
-
         // Close all files
         fNameList.close();
         fProbList.close();
@@ -48,6 +46,7 @@ public class LocalJudge {
         fScoreOut.close();
 
         // A non-elegant way to finish
+        STDERR.println("----------\nJudge finished.");
         System.exit(0);
     }
 

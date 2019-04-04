@@ -50,7 +50,7 @@ class SingleJudge {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
-                System.err.println(e.getCause());
+                System.err.println(e.getCause().getMessage());
             }
 
             if (!execSuccess) {
@@ -79,9 +79,6 @@ class SingleJudge {
         } catch (InterruptedException e) {
             e.printStackTrace();
             status = JudgeStatus.RE;
-        } finally {
-            //judgeThread.stop();
-
         }
 
         // Judge the result
